@@ -14,12 +14,14 @@ The layout is as follows:
 ###Add products to users’ saved list:
 /api/lists_products \[POST\]  
 
-Req.body requires {}
+Sample Request body requires {}
+
 
 ###Create a saved list:
 /api/lists \[POST\]  
 
-Req.body requires {}
+Sample Request body requires {}
+
 
 ###See all products information:
 /api/products \[GET\]  
@@ -62,7 +64,8 @@ Example: /stores/3 gives you info about a store with the Id 3.
 /api/type_tags \[POST\]  
 
 https://appriceapi.herokuapp.com/api/type_tags/
-Req.body requires {tagName: ‘customTagName’, productId: clickedOnProductIdAsAnInteger}
+Sample Request body requires {t
+    agName: ‘customTagName’, productId: clickedOnProductIdAsAnInteger}
 Example {tagName: ‘bread’, productId: 12}
 
 ###Find a product by type tag(e.g., butter):
@@ -73,30 +76,34 @@ Query string requires
 ###Create a new user:
 /api/users/register \[POST\]  
 
-Req.body requires {}
+Sample Request body requires {}
+
 
 ###Log a user in and create a session:
 /api/users/login \[POST\]  
 
-Req.body requires {}
+Sample Request body requires {}
+
 
 ###Edit a user’s information(e.g., name, email, password):
 /api/users \[PATCH\]  
 
-Req.body requires:
-{email: “users email address”, password: “users password”, fieldtobechanged: “new field’s value”}
+Sample Request body requires:
+{
+    email: “users email address”, password: “users password”, fieldtobechanged: “new field’s value”}
 
 Example: {email: “user@gmail.com”, password: “password123”, newpassword: “security”}
 
 ###Delete a user:
 /api/users \[DELETE\]  
 
-Req.body requires {}
+Sample Request body requires {}
+
 
 ###Get an optimized grocery list:
 /api/appriceme \[POST\]  
 
-Req.body
+Sample Request body
 `{
     "products": [
     {"products":
@@ -113,6 +120,8 @@ Req.body
     ]}
     "numOfStores": 3,
     }`
+
+    Sample Response:
 
     ###Convert optimized list into a more organized format:
     /api/appriceme/convert \[POST\]  
