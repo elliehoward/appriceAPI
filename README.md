@@ -145,7 +145,8 @@ Sample Request body
     "numOfStores": 3,
     }`
 
-    Sample Response
+    Sample Response  
+
  `[ { id: 23,
      store_id: 3,
      product_id: 6,
@@ -193,9 +194,9 @@ Request body Sample
     availability: true,
     price: 3.19 } ]`
 
-    Sample Response
-    `[
-  {
+    Sample Response  
+
+    `[{
     "id": 3,
     "name": "Target",
     "address": "Metreon, 789 Mission St, San Francisco, CA 94103",
