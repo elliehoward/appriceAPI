@@ -56,7 +56,8 @@ Sample Query string
 ###Get stores filtered by radius
 `/api/stores/search` \[GET\]  
 
-Sample Query string `api/stores/search?lat=your-latitude-here&long=your-longitude-here&radius=your-search-radius-here`
+Sample Query string  
+ `api/stores/search?lat=your-latitude-here&long=your-longitude-here&radius=your-search-radius-here`
 
 
 
@@ -109,23 +110,22 @@ Sample Request body `{email: “user@gmail.com”, password: “password123”}`
 ####This is where you send the products you want, along with search preferences. The stores should already be filtered from the /stores/search route and the data should be formatted as follows:
 `/api/appriceme` \[POST\]
 
-`{
-    products:
-    [
-      {product Object},
-      {product Object},
-      {product Object},
-      {product Object}
-    ],
-    filteredStores: {
-        data: [
-        {store Object},
-        {store Object},
-        {store Object}
+    `{products:
+        [
+          {product Object},
+          {product Object},
+          {product Object},
+          {product Object}
         ],
-    }
-    numOfStores: 3
-}`  
+      filteredStores: {
+            data: [
+                {store Object},
+                {store Object},
+                {store Object}
+            ],
+        }
+      numOfStores: 3
+    }`  
 
 Sample Request body
 `{
@@ -235,56 +235,28 @@ Request body Sample
         "price": 7.49
       },
       {
-    "id": 84,
-    "upc": "300000614048",
-    "plu": null,
-    "name": "Quaker Cap'n Crunch Crunch Berries Cereal (18.7 oz.)",
-    "brand_name": "Quaker",
-    "brand_type": "Cap'n Crunch Crunch Berries Cereal",
-    "size": "18.7 oz.",
-    "product_image_url": "http://target.scene7.com/is/image/Target/13304764?wid=450&hei=450&fmt=pjpeg",
-    "created_at": "2016-11-16T20:26:16.000Z",
-    "updated_at": "2016-11-16T20:26:16.000Z"
-  },
-  {
-    "id": 91,
-    "upc": "073435093305",
-    "plu": null,
-    "name": "King's Hawaiian Sweet Sliced Bread (16 oz.)",
-    "brand_name": "King's Hawaiian",
-    "brand_type": "Sweet Sliced Bread",
-    "size": "16 oz.",
-    "product_image_url": "http://target.scene7.com/is/image/Target/16229584?wid=450&hei=450&fmt=pjpeg",
-    "created_at": "2016-11-16T20:26:16.000Z",
-    "updated_at": "2016-11-16T20:26:16.000Z"
-  }
-    ]
-  },
-
-  {
-    "id": 7,
-    "name": "Trader Joe's",
-    "address": "555 9th St, San Francisco, CA 94103",
-    "phone_number": "(415) 863-1292",
-    "store_url": "http://www.traderjoes.com/",
-    "store_image_url": "http://www.traderjoes.com/images/announcement/778-Davie-Store.jpg",
-    "latitude": "37.770720000000",
-    "longitude": "-122.407576000000",
-    "created_at": "2016-11-14T20:26:16.000Z",
-    "updated_at": "2016-11-14T20:26:16.000Z",
-    "products": [
+        "id": 84,
+        "upc": "300000614048",
+        "plu": null,
+        "name": "Quaker Cap'n Crunch Crunch Berries Cereal (18.7 oz.)",
+        "brand_name": "Quaker",
+        "brand_type": "Cap'n Crunch Crunch Berries Cereal",
+        "size": "18.7 oz.",
+        "product_image_url": "http://target.scene7.com/is/image/Target/13304764?wid=450&hei=450&fmt=pjpeg",
+        "created_at": "2016-11-16T20:26:16.000Z",
+        "updated_at": "2016-11-16T20:26:16.000Z"
+      },
       {
-        "id": 47,
-        "upc": null,
-        "plu": "94050",
-        "name": "Cantaloupe (large) [organic]",
-        "brand_name": null,
-        "brand_type": null,
-        "size": "large",
-        "product_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQzAZEG33Tn3FOuGvmwlzg6IUxrUpdgOX26xMrI5gAZU3SQ1MmAWQ",
-        "created_at": "2016-11-14T20:26:16.000Z",
-        "updated_at": "2016-11-14T20:26:16.000Z",
-        "price": 0.99
+        "id": 91,
+        "upc": "073435093305",
+        "plu": null,
+        "name": "King's Hawaiian Sweet Sliced Bread (16 oz.)",
+        "brand_name": "King's Hawaiian",
+        "brand_type": "Sweet Sliced Bread",
+        "size": "16 oz.",
+        "product_image_url": "http://target.scene7.com/is/image/Target/16229584?wid=450&hei=450&fmt=pjpeg",
+        "created_at": "2016-11-16T20:26:16.000Z",
+        "updated_at": "2016-11-16T20:26:16.000Z"
       }
     ]
   }
