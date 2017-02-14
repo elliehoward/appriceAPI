@@ -12,96 +12,113 @@ The layout is as follows:
 `and lastly a sample response.`
 
 ###Add products to users’ saved list:
-/api/lists_products \[POST\]  
+`/api/lists_products` \[POST\]  
 
-Sample Request body requires {}
+Sample Request body {}
 
 
 ###Create a saved list:
-/api/lists \[POST\]  
+`/api/lists` \[POST\]  
 
-Sample Request body requires {}
+Sample Request body {}
 
 
 ###See all products information:
-/api/products \[GET\]  
+`/api/products` \[GET\]  
 
 
-###Find product by search term(e.g., ):
-/api/products/search \[GET\]  
+###Find product by search term(e.g., milk, Tostitos):
+`/api/products/search` \[GET\]  
 
-Query string requires
+Sample Query string
+`/api/products/search?name=milk`
 
 ###Get the most popular products:
-/api/products/popular \[GET\]  
+`/api/products/popular` \[GET\]  
 
 
 ###Get all the products with info about which stores they’re available at and for what price:
-/api/stores_products \[GET\]  
+`/api/stores_products` \[GET\]  
 
 
 ###Get information about every store:
-/api/stores \[GET\]  
+`/api/stores` \[GET\]  
 
 
 ###Get stores filtered by radius
-/api/stores/search \[GET\]  
+`/api/stores/search` \[GET\]  
 
 Example: http://appriceapi.herokuapp.com/api/stores/search?lat=your-latitude-here&long=your-longitude-here&radius=your-search-radius-here
 
 
 
 ###Get a store by it’s Id:
-/api/stores/:id \[GET\]  
+`/api/stores/:id` \[GET\]  
 
 Example: /stores/3 gives you info about a store with the Id 3.
 
 ###See all type tags:
-/api/type_tags \[GET\]  
+`/api/type_tags` \[GET\]  
 
 
 ###Associate a product to a type tag(e.g., bread):
-/api/type_tags \[POST\]  
+`/api/type_tags` \[POST\]  
 
-https://appriceapi.herokuapp.com/api/type_tags/
-Sample Request body requires {t
-    agName: ‘customTagName’, productId: clickedOnProductIdAsAnInteger}
-Example {tagName: ‘bread’, productId: 12}
+Sample Request body
+{tagName: ‘bread’, productId: 12}
 
-###Find a product by type tag(e.g., butter):
-/api/type_tags/search \[GET\]  
+###Find a product by type tag association(e.g., butter):
+####This is where you get JSON of products that are associated with the tag in the query string.
+`/api/type_tags/search` \[GET\]  
 
-Query string requires
+Sample Query string `/api/type_tags/search?name=peanut+butter`
 
 ###Create a new user:
-/api/users/register \[POST\]  
+`/api/users/register` \[POST\]  
 
-Sample Request body requires {}
+Sample Request body {"first_name": "user's name", "last_name": "user's lastname", email: blahblah@gmail.com, password: userspass(it will be hashed.)}
 
 
 ###Log a user in and create a session:
-/api/users/login \[POST\]  
+`/api/users/login` \[POST\]  
 
-Sample Request body requires {}
+Sample Request body {}
 
 
 ###Edit a user’s information(e.g., name, email, password):
-/api/users \[PATCH\]  
+####Whatever field needs to be changed needs to be added in the body as new_fieldname
+`/api/users` \[PATCH\]  
 
-Sample Request body requires:
-{
-    email: “users email address”, password: “users password”, fieldtobechanged: “new field’s value”}
-
-Example: {email: “user@gmail.com”, password: “password123”, newpassword: “security”}
+Sample Request body:
+ {email: “user@gmail.com”, password: “password123”, new_password: “security”}
 
 ###Delete a user:
-/api/users \[DELETE\]  
+`/api/users` \[DELETE\]  
 
-Sample Request body requires {}
+Sample Request body {email: “user@gmail.com”, password: “password123”}
 
 
 ###Get an optimized grocery list:
-/api/appriceme \[POST\]  
+####This is where you send the products you want, along with search preferences. The stores should already be filtered from the /stores/search route and the data should be formatted as follows:
+`/api/appriceme` \[POST\]
+
+{
+    products:
+    [
+      {product Object},
+      {product Object},
+      {product Object},
+      {product Object}
+    ],
+    filteredStores: {
+        data: [
+        {store Object},
+        {store Object},
+        {store Object}
+        ],
+    }
+    numOfStores: 3
+}  
 
 Sample Request body
 `{
@@ -123,7 +140,8 @@ Sample Request body
 
     Sample Response:
 
-    ###Convert optimized list into a more organized format:
-    /api/appriceme/convert \[POST\]  
+###Convert optimized list into a more organized format:
+####This is where you send the response that comes from /api/appriceme
+`/api/appriceme/convert` \[POST\]  
 
-    Req.body requires {}
+Request body Sample {}
