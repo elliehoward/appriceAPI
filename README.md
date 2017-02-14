@@ -258,6 +258,4 @@ Request body Sample
         "created_at": "2016-11-16T20:26:16.000Z",
         "updated_at": "2016-11-16T20:26:16.000Z"
       }
-    ]
-  }
-]`
+    ]}]`
