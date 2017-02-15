@@ -127,7 +127,8 @@ Sample Request body `{email: “user@gmail.com”, password: “password123”}`
       numOfStores: 3
     }`  
 
-Sample Request body
+Sample Request body  
+
 `{
     "products": [
     {"products":
@@ -143,7 +144,8 @@ Sample Request body
     {"id": 4, "name": "Safeway", "address": "298 King St, San Francisco, CA 94107" ,"phone_number": "(415) 633-1001", "store_url": "http://local.safeway.com/ca/san-francisco-2606.html?utm_source=G&utm_medium=Maps&utm_campaign=G+Places", "store_image_url": "http://www.operating-hours.com/wp-content/uploads/2015/08/SAFEWAY-STORE.jpg", "latitude": "37.776667000000", "longitude": "-122.394109000000" ,"created_at":"2016-11-14T20:26:16.000Z", "updated_at": "2016-11-14T20:26:16.000Z"},
     ]}
     "numOfStores": 3,
-    }`
+    }`  
+    
 
     Sample Response  
 
