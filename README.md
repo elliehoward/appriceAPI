@@ -11,7 +11,7 @@ The layout is as follows:
 
 `and lastly a sample response, if applicable.`
 
-###Create a saved list:
+### Create a saved list:
 `/api/lists` \[POST\]  
 
 Sample Request body `{userId: 1, name: "Work week"}`  
@@ -19,8 +19,8 @@ Sample Request body `{userId: 1, name: "Work week"}`
 Sample Response `[{id: 1}]` \(This is the id of the newly created list.\)
 
 
-###Add products to users’ saved list:
-####This is where you send the products to be saved on a list along with the list id that comes back from the above route.
+### Add products to users’ saved list:
+#### This is where you send the products to be saved on a list along with the list id that comes back from the above route.
 `/api/lists_products` \[POST\]  
 
 Sample Request body `{listId: 1, products: [
@@ -31,29 +31,29 @@ Sample Request body `{listId: 1, products: [
 }`
 
 
-###See all products information:
+### See all products information:
 `/api/products` \[GET\]  
 
 
-###Find product by search term(e.g., milk, Tostitos):
+### Find product by search term(e.g., milk, Tostitos):
 `/api/products/search` \[GET\]  
 
 Sample Query string
 `/api/products/search?name=milk`
 
-###Get the most popular products:
+### Get the most popular products:
 `/api/products/popular` \[GET\]  
 
 
-###Get all the products with info about which stores they’re available at and for what price:
+### Get all the products with info about which stores they’re available at and for what price:
 `/api/stores_products` \[GET\]  
 
 
-###Get information about every store:
+### Get information about every store:
 `/api/stores` \[GET\]  
 
 
-###Get stores filtered by radius
+### Get stores filtered by radius
 `/api/stores/search` \[GET\]  
 
 Sample Query string  
@@ -61,53 +61,53 @@ Sample Query string
 
 
 
-###Get a store's information by it’s Id number:
+### Get a store's information by it’s Id number:
 `/api/stores/:id` \[GET\]  
 
 
-###See all type tags:
+### See all type tags:
 `/api/type_tags` \[GET\]  
 
 
-###Associate a product to a type tag(e.g., bread):
+### Associate a product to a type tag(e.g., bread):
 `/api/type_tags` \[POST\]  
 
 Sample Request body
 `{tagName: ‘bread’, productId: 12}`
 
-###Find a product by type tag association(e.g., butter):
-####This is where you get JSON of products that are associated with the tag in the query string.
+### Find a product by type tag association(e.g., butter):
+#### This is where you get JSON of products that are associated with the tag in the query string.
 `/api/type_tags/search` \[GET\]  
 
 Sample Query string `/api/type_tags/search?name=peanut+butter`
 
-###Create a new user:
+### Create a new user:
 `/api/users/register` \[POST\]  
 
 Sample Request body `{"first_name": "user's name", "last_name": "user's lastname", email: blahblah@gmail.com, password: userspass(it will be hashed.)}`
 
 
-###Log a user in and create a session:
+### Log a user in and create a session:
 `/api/users/login` \[POST\]  
 
 Sample Request body `{email: “user@gmail.com”, password: “password123”}`
 
 
-###Edit a user’s information(e.g., name, email, password):
-####Whatever field needs to be changed needs to be added in the body as new_fieldname
+### Edit a user’s information(e.g., name, email, password):
+#### Whatever field needs to be changed needs to be added in the body as new_fieldname
 `/api/users` \[PATCH\]  
 
 Sample Request body:
 `{email: “user@gmail.com”, password: “password123”, new_password: “security”}`
 
-###Delete a user:
+### Delete a user:
 `/api/users` \[DELETE\]  
 
 Sample Request body `{email: “user@gmail.com”, password: “password123”}`
 
 
-###Get an optimized grocery list:
-####This is where you send the products you want, along with search preferences. The stores should already be filtered from the /stores/search route and the data should be formatted as follows:
+### Get an optimized grocery list:
+#### This is where you send the products you want, along with search preferences. The stores should already be filtered from the /stores/search route and the data should be formatted as follows:
 `/api/appriceme` \[POST\]
 
     `{products:
@@ -170,8 +170,8 @@ Sample Request body
             availability: true,
             price: 3.19 } ]`
 
-###Convert optimized list into a more organized format:
-####This is where you send the response that comes from /api/appriceme
+### Convert optimized list into a more organized format:
+#### This is where you send the response that comes from /api/appriceme
 `/api/appriceme/convert` \[POST\]  
 
 Request body Sample
